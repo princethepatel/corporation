@@ -15,6 +15,7 @@ export class MainService {
 
   constructor() {
     this.socket = io(this.url, {transports: ['websocket', 'polling', 'flashsocket']});
+    console.log('URL:%s',this.url);
   }
 
   generateRandomWord(): string {
