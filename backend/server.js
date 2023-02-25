@@ -29,7 +29,7 @@ io.on('connection', (socket) => {
 
     socket.on('join', (data) => {
 
-        let sendData={"status":null,"message":null};
+        let sendData={"status":null,"message":null,"name":null};
 
 
         console.log(rooms[data.roomId]);
@@ -43,6 +43,7 @@ io.on('connection', (socket) => {
 
         socket.join(data.roomId);
         
+        sendData.name=data.name;
         sendData.status=true;
         sendData.message="Room Joined Sucessfully";
 

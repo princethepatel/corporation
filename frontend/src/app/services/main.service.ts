@@ -8,11 +8,14 @@ import { io, Socket } from 'socket.io-client';
 export class MainService {
 
   private socket: Socket;
+  private randWord: String;
+
   private url = 'http://44.213.112.56'; // your server local path
   // private url = 'http://localhost:3000'; // your server local path
 
   constructor() {
     this.socket = io(this.url, {transports: ['websocket', 'polling', 'flashsocket']});
+    this.randWord = this.generateRandomWord();
   }
 
   generateRandomWord(): string {
@@ -25,9 +28,7 @@ export class MainService {
   }
 
   createRoom(data:any): void {
-    var randWord = this.generateRandomWord();
-
-    data.roomId=randWord;
+    data.roomId=this.randWord;
     data.adminId=this.socket.id;
 
     this.socket.emit('create-room', data);
@@ -48,7 +49,7 @@ export class MainService {
   }
 
   joinRoom(data:any): void {
-    data.id=this.socket.id;
+    data.id=data.roomId;
     this.socket.emit('join', data);
   }
 

@@ -18,6 +18,8 @@ export class JoinRoomComponent implements OnInit {
 
       if(data.status===true)
       {
+        alert(`Name Received. \nName ="${data.name}" \nGet your poker face on!`);
+
         this.router.navigate(["room",{"data":JSON.stringify(data)}])
       }
       else
