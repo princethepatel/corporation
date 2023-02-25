@@ -9,13 +9,23 @@ import { environment } from 'src/environments/environment';
 export class MainService {
 
   private socket: Socket;
+
   private url = environment.baseUrl; // your server local path
+
 
   constructor() {
     this.socket = io(this.url, {transports: ['websocket', 'polling', 'flashsocket']});
   }
 
-  
+  generateRandomWord(): string {
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let word = "";
+    for (let i = 0; i < 4; i++) {
+      word += letters.charAt(Math.floor(Math.random() * letters.length));
+    }
+    return word;
+  }
+
   createRoom(data:any): void {
     var randNumber = Math.floor(Math.random() * 10000);
 
