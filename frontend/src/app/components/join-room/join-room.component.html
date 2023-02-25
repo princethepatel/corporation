@@ -1,0 +1,40 @@
+<link rel="stylesheet" src="/frontend/src/assets/Kingthings-Trypewriter-fontfacekit/web fonts/kingthingstrypewriter_regular_macroman/stylesheet.css" type="text/css" charset="utf-8" />
+
+<section class="background-radial-gradient overflow-hidden">
+    <div class="container px-4 py-2 px-md-5  text-lg-start my-5">
+        <!-- <div class="row gx-lg-5 align-items-center mb-5"> -->
+            
+
+            <div class=" mb-5 mb-lg-0 position-relative">
+                <!-- <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div> -->
+                <!-- <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div> -->
+
+                <div class="bg-glass">
+                    <div class="card-body px-4 py-5 px-md-5" id="form">
+                        <p class="display-5 fw-bold ls-tight text-center titel-text"
+                            style="font-size:45px; font-family:'kingthings_tw';">
+                            corporation
+                        </p>
+                        <form ngNativeValidate (submit)="joinRoom()">
+                            <h3 class="text-center titel-text" style="font-size:25px; font-family: 'kingthings_tw';">join room</h3>
+                            <br>
+                            <div class="form-group titel-text">
+                                <label style="font-size: large;" for="name">your corporation name</label>
+                                <input type="text" name="name" class="form-control" id="name" [(ngModel)]="registerObject.name" placeholder="enter name" required>
+                            </div>
+                            <div class="form-group titel-text">
+                                <label style="font-size: large;" for="text">room id</label>
+                                <input type="text" name="text" class="form-control" id="text" [(ngModel)]="registerObject.roomId" placeholder="enter room id" required>
+                            </div>
+                            <br>
+                            <button type="submit" class="btn-flat btn-large titel-text" style="width: 100%;">join room</button>
+
+                            <button type="button" class="btn-flat btn-large mt-2" (click)="goToCreatingRoom()" style="width: 100%;">create room</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+    </div>
+</section>

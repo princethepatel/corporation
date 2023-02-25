@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'kingthings_tw';
+        src:          
+         url('Kingthings_Trypewriter_2-webfont.woff') format('woff'),
+         url('Kingthings_Trypewriter_2-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

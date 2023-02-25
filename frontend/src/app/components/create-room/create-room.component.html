@@ -1,0 +1,55 @@
+<section class="background-radial-gradient overflow-hidden">
+    <div class="container px-4 py-2 px-md-5 text-lg-start my-5">
+        <!-- <div class="row gx-lg-5 align-items-center mb-5"> -->
+            <div class="mb-5 mb-lg-0" style="z-index: 10">
+                <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(0, 0%, 0%); font-family: fantasy"></h1>
+            </div>
+
+            <div class="mb-5 mb-lg-0 position-relative">
+                <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+                <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+                <div class="bg-glass">
+                    <div class="card-body px-4 py-5 px-md-5" id="form">
+                        <p class="display-5 fw-bold ls-tight text-center" style="
+                                                        color: hsl(0, 0%, 0%);
+                                                        font-family: kingthings_tw;
+                                                        font-size: 45px;
+                                                    ">
+                            corporation
+                    </p>
+                        <form ngNativeValidate (submit)="createRoom()">
+                            <h3 class="text-center" style="font-size: 25px">create room</h3>
+                            <br />
+                            <div class="form-group">
+                                <label style="font-size: large;" for="name">your corporation name</label>
+                                <input type="text"  [(ngModel)]="registerObject.name"  name="name" class="form-control" id="name"
+                                    placeholder="Enter Your Name"   required />
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="name">room name</label>
+                                <input type="text"  [(ngModel)]="registerObject.roomName"  name="name" class="form-control" id="name"
+                                    placeholder="Enter Room Name"    />
+                            </div> -->
+                            <div class="form-group">
+                                <label for="password">room id assigned</label>
+                                <input type="text" name="password" class="form-control" id="password"
+                                    placeholder="xxxxxxxxx" [(ngModel)]="registerObject.roomId" disabled />
+                            </div>
+                            <br />
+
+                            <button type="submit" class="btn-flat btn-large" style="width: 100%">
+                                create room
+                            </button>
+
+                            <button type="button" class="btn-flat btn-large" (click)="goToJoinRoom()"
+                                style="width: 100%">
+                                jump in
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+    </div>
+</section>
