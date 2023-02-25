@@ -9,16 +9,25 @@ export class MainService {
 
   private socket: Socket;
   private url = 'http://44.213.112.56'; // your server local path
+  // private url = 'http://localhost:3000'; // your server local path
 
   constructor() {
     this.socket = io(this.url, {transports: ['websocket', 'polling', 'flashsocket']});
   }
 
-  
-  createRoom(data:any): void {
-    var randNumber = Math.floor(Math.random() * 10000);
+  generateRandomWord(): string {
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let word = "";
+    for (let i = 0; i < 4; i++) {
+      word += letters.charAt(Math.floor(Math.random() * letters.length));
+    }
+    return word;
+  }
 
-    data.roomId="room-"+randNumber;
+  createRoom(data:any): void {
+    var randWord = this.generateRandomWord();
+
+    data.roomId=randWord;
     data.adminId=this.socket.id;
 
     this.socket.emit('create-room', data);
