@@ -1,6 +1,6 @@
 {
     "/*":{
-        "target":"http://localhost:3000",
+        "target":"http://44.213.112.56",
         "secure":false,
         "logLevel":"debug"
     }

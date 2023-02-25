@@ -8,7 +8,7 @@ import { io, Socket } from 'socket.io-client';
 export class MainService {
 
   private socket: Socket;
-  private url = 'http://localhost:3000'; // your server local path
+  private url = 'http://44.213.112.56'; // your server local path
 
   constructor() {
     this.socket = io(this.url, {transports: ['websocket', 'polling', 'flashsocket']});
