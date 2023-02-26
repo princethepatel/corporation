@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 export class MainService {
 
   private socket: Socket;
-
+  private randWord: String;
   private url = environment.baseUrl; // your server local path
 
 
