@@ -32,7 +32,7 @@ export class RoomComponent implements OnInit {
 
       for (let key in data.users) {
         body!.innerHTML += `
-        <div class="p-2 m-2   shadow rounded-2"><div class="card" style="width: 18rem;">
+        <div class="p-2 m-2   shadow rounded-2"><div class="" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title"></h5>
           <h6 class="card-subtitle mb-2 text-muted"></h6>
