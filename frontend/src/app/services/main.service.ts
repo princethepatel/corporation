@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { io, Socket } from 'socket.io-client';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +9,9 @@ import { io, Socket } from 'socket.io-client';
 export class MainService {
 
   private socket: Socket;
-  private randWord: String;
 
-  private url = 'http://44.213.112.56'; // your server local path
-  // private url = 'http://localhost:3000'; // your server local path
+  private url = environment.baseUrl; // your server local path
+
 
   constructor() {
     this.socket = io(this.url, {transports: ['websocket', 'polling', 'flashsocket']});
@@ -63,7 +63,7 @@ export class MainService {
       return () => {
         this.socket.disconnect();
       }
-      
+
     });
   }
 
@@ -77,7 +77,7 @@ export class MainService {
       return () => {
         this.socket.disconnect();
       }
-      
+
     });
   }
 
