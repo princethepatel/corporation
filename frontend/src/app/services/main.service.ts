@@ -62,7 +62,7 @@ export class MainService {
       return () => {
         this.socket.disconnect();
       }
-      
+
     });
   }
 
@@ -76,7 +76,7 @@ export class MainService {
       return () => {
         this.socket.disconnect();
       }
-      
+
     });
   }
 
