@@ -38,3 +38,8 @@ body
     background: white;
     color: #160c0d
 }
+
+.btn-large:hover {
+    background-color:#41a4ce;
+    transition: 0.3s;
+}
