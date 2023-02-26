@@ -12,7 +12,6 @@ export class MainService {
   private randWord: String;
   private url = environment.baseUrl; // your server local path
 
-
   constructor() {
     this.socket = io(this.url, {transports: ['websocket', 'polling', 'flashsocket']});
     this.randWord = this.generateRandomWord();
