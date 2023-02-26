@@ -31,42 +31,29 @@ io.on('connection', (socket) => {
 
         let sendData={"status":null,"message":null,"name":null};
 
-
         console.log(rooms[data.roomId]);
         console.log(data.roomId)
 
-        if(rooms[data.roomId]!=undefined)
-        {
-        
-        rooms[data.roomId].Users[data.id]={"userName":data.name,"id":data.id};
- 
+        if(rooms[data.roomId]!= undefined){
+            rooms[data.roomId].Users[data.id]={"userName":data.name,"id":data.id};
+            socket.join(data.roomId);
+            
+            sendData.name=data.name;
+            sendData.status=true;
+            sendData.message="Room Joined Sucessfully";
 
-        socket.join(data.roomId);
-        
-        sendData.name=data.name;
-        sendData.status=true;
-        sendData.message="Room Joined Sucessfully";
+            let adminId=rooms[data.roomId].Admin;
 
-        let adminId=rooms[data.roomId].Admin;
+            console.log(rooms[data.roomId].Users)
+            
+            socket.broadcast.to(adminId).emit('userJoined',{"users":rooms[data.roomId].Users});
 
-        console.log(rooms[data.roomId].Users)
-        
-        socket.broadcast.to(adminId).emit('userJoined',{"users":rooms[data.roomId].Users});
-
-        }
-        else
-        {
+        } else {
             sendData.status=false;
             sendData.message="No Room With This Id Exist!..\nPlease Try Again!...";
-
         }
-
         socket.emit("joinedRoom",sendData);
-
-
     });
-    
-    
 });
 
 server.listen(port, () => {
