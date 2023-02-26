@@ -1,7 +1,17 @@
 <link rel="stylesheet" src="/frontend/src/assets/Kingthings-Trypewriter-fontfacekit/web fonts/kingthingstrypewriter_regular_macroman/stylesheet.css" type="text/css" charset="utf-8" />
 
+<div class="navbar navbar-expand-lg navbar-light navbar-lewagon row mr-0 ml-0">
+    <div class="col-lg d-flex justify-content-end px-0">
+        <ul class="navbar-nav text-center">
+            <li class="nav-item">
+                <a class="nav-link" href="/game-rules">how to play</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
 <section class="background-radial-gradient overflow-hidden">
-    <div class="container px-4 py-2 px-md-5  text-lg-start my-5">
+    <div class="container px-4 py-2 px-md-5 text-lg-start my-5">
         <!-- <div class="row gx-lg-5 align-items-center mb-5"> -->
             
 
@@ -10,19 +20,25 @@
                 <!-- <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div> -->
 
                 <div class="bg-glass">
+                    
                     <div class="card-body px-4 py-5 px-md-5" id="form">
+                        <div class="col-lg d-flex justify-content-end px-0">
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                NEW
+                            </div>
+                        </div>
                         <p class="display-5 fw-bold ls-tight text-center titel-text"
                             style="font-size:45px; font-family:'kingthings_tw';">
                             corporation
                         </p>
                         <form ngNativeValidate (submit)="joinRoom()">
-                            <h3 class="text-center titel-text" style="font-size:25px; font-family: 'kingthings_tw';">join room</h3>
+                            <h3 class="text-center title-text" style="font-size:25px; font-family: 'kingthings_tw';">join room</h3>
                             <br>
-                            <div class="form-group titel-text">
+                            <div class="form-group title-text">
                                 <label style="font-size: large;" for="name">your corporation name</label>
                                 <input type="text" name="name" class="form-control" id="name" [(ngModel)]="registerObject.name" placeholder="enter name" required>
                             </div>
-                            <div class="form-group titel-text">
+                            <div class="form-group title-text">
                                 <label style="font-size: large;" for="text">room id</label>
                                 <input type="text" name="text" class="form-control" id="text" [(ngModel)]="registerObject.roomId" placeholder="enter room id" required>
                             </div>

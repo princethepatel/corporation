@@ -9,6 +9,7 @@ import { CreateRoomComponent } from './components/create-room/create-room.compon
 import { FormsModule } from '@angular/forms';
 import { RoomComponent } from './components/room/room.component';
 import { RoomJoinedComponent } from './components/room-joined/room-joined.component';
+import { GameRulesComponent } from './components/game-rules/game-rules.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RoomJoinedComponent } from './components/room-joined/room-joined.compon
     JoinRoomComponent,
     CreateRoomComponent,
     RoomComponent,
-    RoomJoinedComponent
+    RoomJoinedComponent,
+    GameRulesComponent
   ],
   imports: [
     BrowserModule,
