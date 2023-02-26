@@ -2,10 +2,10 @@
 
 body
 {
-    background-image: url('./assets/white-texture.jpg');
+    background-image: url('./assets/hell.jpg');
     background-position:top;
     background-repeat:repeat;
-    background-size:contain;
+    background-size:auto contain;
 }
 
 #containerBody

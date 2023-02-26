@@ -15,7 +15,7 @@ export class MainService {
 
   constructor() {
     this.socket = io(this.url, {transports: ['websocket', 'polling', 'flashsocket']});
-    console.log('URL:%s',this.url);
+    this.randWord = this.generateRandomWord();
   }
 
   generateRandomWord(): string {
@@ -28,9 +28,7 @@ export class MainService {
   }
 
   createRoom(data:any): void {
-    var randNumber = Math.floor(Math.random() * 10000);
-
-    data.roomId="room-"+randNumber;
+    data.roomId=this.randWord;
     data.adminId=this.socket.id;
 
     this.socket.emit('create-room', data);
@@ -51,7 +49,7 @@ export class MainService {
   }
 
   joinRoom(data:any): void {
-    data.id=this.socket.id;
+    data.id=data.roomId;
     this.socket.emit('join', data);
   }
 
@@ -65,7 +63,7 @@ export class MainService {
       return () => {
         this.socket.disconnect();
       }
-      
+
     });
   }
 
@@ -79,7 +77,7 @@ export class MainService {
       return () => {
         this.socket.disconnect();
       }
-      
+
     });
   }
 
