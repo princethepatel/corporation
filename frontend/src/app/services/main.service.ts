@@ -49,7 +49,7 @@ export class MainService {
   }
 
   joinRoom(data:any): void {
-    data.id=data.roomId;
+    data.id=this.socket.id;
     this.socket.emit('join', data);
   }
 
